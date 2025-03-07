@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    touch-action: none; /* Prevent default touch actions on mobile */
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #70c5ce; /* Sky blue background */
+    image-rendering: pixelated; /* Keep pixel art crisp */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#high-score-message {
+    color: #ffdd00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: pulse 1.5s infinite;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(255, 150, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid #ffdd00;
+}
+
+#high-score-message h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffdd00;
+}
+
+#high-score-message p {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+button {
+    background-color: #f8c835; /* Yellow button */
+    color: #5d3b14; /* Dark brown text */
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #d9a400;
+    transition: transform 0.1s, box-shadow 0.1s;
+    margin: 10px;
+}
+
+button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d9a400;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.small-button {
+    background-color: #e74c3c; /* Red button */
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    box-shadow: 0 3px 0 #c0392b;
+    margin-top: 5px;
+}
+
+.small-button:hover {
+    box-shadow: 0 1px 0 #c0392b;
+}
+
+.small-button:active {
+    box-shadow: none;
+}
+
+.credits {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.credits p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.music-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.color-button {
+    background-color: #4a6cd4; /* Blue button */
+    color: white;
+    box-shadow: 0 4px 0 #2a4cb4;
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+.color-button:hover {
+    box-shadow: 0 2px 0 #2a4cb4;
+}
+
+.color-button:active {
+    box-shadow: none;
+}
+
+.color-button.in-game {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    font-size: 14px;
+    padding: 6px 12px;
+    opacity: 0.7;
+}
+
+.color-button.in-game:hover {
+    opacity: 1;
+}
+
+/* Media queries for different screen sizes */
+@media (max-height: 640px) {
+    .game-container {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

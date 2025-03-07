@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flappy Bird Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="game-canvas"></canvas>
+        <button id="music-button" class="music-button">🔊</button>
+        <div id="start-screen" class="screen">
+            <h1>Flappy Bird</h1>
+            <p>Tap or click to flap</p>
+            <button id="start-button">Start Game</button>
+            <div class="credits">
+                <p>Created by Cristian Jimenez</p>
+                <p>Original Flappy Bird game by Dong Nguyen</p>
+            </div>
+        </div>
+        <div id="game-over-screen" class="screen hidden">
+            <h1>Game Over</h1>
+            <p>Score: <span id="final-score">0</span></p>
+            <div id="high-score-message" class="hidden">
+                <h2>🏆 New High Score! 🏆</h2>
+                <p>Congratulations!</p>
+            </div>
+            <button id="restart-button">Play Again</button>
+            <button id="reset-score-button" class="small-button">Reset Best Score</button>
+            <div class="credits">
+                <p>Created by Cristian Jimenez</p>
+                <p>Original Flappy Bird game by Dong Nguyen</p>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
