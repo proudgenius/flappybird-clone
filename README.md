@@ -2,6 +2,9 @@
 
 A simple Flappy Bird clone built with HTML5 Canvas and JavaScript. This game works on both desktop and mobile browsers.
 
+![flappybirdclone-demo](https://github.com/user-attachments/assets/92588ab3-e109-4fe1-b814-2b370d9b6130)
+
+
 ## How to Play
 
 1. Open `index.html` in your web browser
